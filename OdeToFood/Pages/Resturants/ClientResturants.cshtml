@@ -1,0 +1,20 @@
+﻿@page
+@model OdeToFood.Pages.Resturants.ClientResturantsModel
+@{
+    ViewData["Titel"] = "ClientResturants";
+}
+
+<h2>Client Resturants</h2>
+@section Scripts {
+  <script>
+
+
+      $(fanction () {
+          $.ajax("/api/resturants/",
+                    { metod: "get" })
+              .then(fanction (response) {
+                  console.dir(response);
+              });
+      });
+  </script>
+ }
